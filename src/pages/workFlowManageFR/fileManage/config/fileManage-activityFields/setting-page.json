@@ -1,0 +1,407 @@
+{
+  "pageName": "",
+  "columns": 2,
+  "layout": {
+    "table": "Content",
+    "form": "TitleContent"
+  },
+  "map": {},
+  "tableActions": [
+    {
+      "title": "添加",
+      "type": "modal",
+      "options": {
+        "style": "primary",
+        "modalTitle": "添加字段",
+        "modalWidth": 600,
+        "items": [
+          {
+            "component": "activity_fields_form",
+            "config": {
+              "layout": "Grid",
+              "layoutConfig": {
+                "value": [
+                  24
+                ]
+              },
+              "API": {
+                "createAPI": "/api/crud/pdfAttribute/pdfAttributes"
+              },
+              "fields": [
+                {
+                  "label": "绑定方案",
+                  "field": "bindingMethod",
+                  "type": "local_radio",
+                  "options": [
+                    {
+                      "label": "方案一",
+                      "value": "1"
+                    },
+                    {
+                      "label": "方案二",
+                      "value": "2"
+                    }
+                  ],
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ]
+                },
+                {
+                  "label": "行",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "props": {
+                    "placeholder": "请输入"
+                  },
+                  "type": "number",
+                  "field": "line",
+                  "expect": {
+                    "field": "bindingMethod",
+                    "value": "1"
+                  }
+                },
+                {
+                  "label": "列",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "props": {
+                    "placeholder": "请输入"
+                  },
+                  "type": "number",
+                  "field": "column",
+                  "expect": {
+                    "field": "bindingMethod",
+                    "value": "1"
+                  }
+                },
+                {
+                  "label": "名称",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "props": {
+                    "placeholder": "请输入"
+                  },
+                  "type": "input",
+                  "field": "pdfField",
+                  "expect": {
+                    "field": "bindingMethod",
+                    "value": "2"
+                  }
+                },
+                {
+                  "label": "方位",
+                  "field": "location",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "type": "select",
+                  "options": [
+                    {
+                      "label": "上",
+                      "value": "top"
+                    },
+                    {
+                      "label": "下",
+                      "value": "bottom"
+                    },
+                    {
+                      "label": "左",
+                      "value": "left"
+                    },
+                    {
+                      "label": "右",
+                      "value": "right"
+                    }
+                  ],
+                  "expect": {
+                    "field": "bindingMethod",
+                    "value": "2"
+                  }
+                },
+                {
+                  "label": "绑定字段",
+                  "field": "attributeId",
+                  "type": "modal-radio",
+                  "props": {},
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "options": {
+                    "title": "选择字段",
+                    "label": "fieldName",
+                    "editLabel": "fieldName",
+                    "value": "id",
+                    "pagination": true,
+                    "API": "/api/doc/attributeList/[id]",
+                    "saveData": {
+                      "masterRelations": "value"
+                    },
+                    "fields": [
+                      {
+                        "label": "标识",
+                        "field": "fieldName"
+                      },
+                      {
+                        "label": "字段名",
+                        "field": "attributeName"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "expect": {}
+    }
+  ],
+  "tableOperation": [
+    {
+      "title": "编辑",
+      "type": "modal",
+      "options": {
+        "modalTitle": "编辑步骤",
+        "modalWidth": 600,
+        "outside": true,
+        "items": [
+          {
+            "component": "activity_fields_form",
+            "config": {
+              "layout": "Grid",
+              "layoutConfig": {
+                "value": [
+                  24
+                ]
+              },
+              "API": {
+                "getAPI": "/api/crud/pdfAttribute/pdfAttributes/(id)",
+                "updateAPI": "/api/crud/pdfAttribute/pdfAttributes/(id)"
+              },
+              "fields": [
+                {
+                  "label": "绑定方案",
+                  "field": "bindingMethod",
+                  "type": "local_radio",
+                  "options": [
+                    {
+                      "label": "方案一",
+                      "value": "1"
+                    },
+                    {
+                      "label": "方案二",
+                      "value": "2"
+                    }
+                  ],
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ]
+                },
+                {
+                  "label": "行",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "props": {
+                    "placeholder": "请输入"
+                  },
+                  "type": "number",
+                  "field": "line",
+                  "expect": {
+                    "field": "bindingMethod",
+                    "value": "1"
+                  }
+                },
+                {
+                  "label": "列",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "props": {
+                    "placeholder": "请输入"
+                  },
+                  "type": "number",
+                  "field": "column",
+                  "expect": {
+                    "field": "bindingMethod",
+                    "value": "1"
+                  }
+                },
+                {
+                  "label": "名称",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "props": {
+                    "placeholder": "请输入"
+                  },
+                  "type": "input",
+                  "field": "pdfField",
+                  "expect": {
+                    "field": "bindingMethod",
+                    "value": "2"
+                  }
+                },
+                {
+                  "label": "方位",
+                  "field": "location",
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "type": "select",
+                  "options": [
+                    {
+                      "label": "上",
+                      "value": "top"
+                    },
+                    {
+                      "label": "下",
+                      "value": "bottom"
+                    },
+                    {
+                      "label": "左",
+                      "value": "left"
+                    },
+                    {
+                      "label": "右",
+                      "value": "right"
+                    }
+                  ],
+                  "expect": {
+                    "field": "bindingMethod",
+                    "value": "2"
+                  }
+                },
+                {
+                  "label": "绑定字段",
+                  "field": "attributeId",
+                  "type": "modal-radio",
+                  "props": {},
+                  "rules": [
+                    {
+                      "type": "required"
+                    }
+                  ],
+                  "options": {
+                    "title": "选择字段",
+                    "label": "fieldName",
+                    "editLabel": "attributeName",
+                    "value": "id",
+                    "pagination": true,
+                    "API": "/api/doc/attributeList/[id]",
+                    "saveData": {
+                      "masterRelations": "value"
+                    },
+                    "fields": [
+                      {
+                        "label": "标识",
+                        "field": "fieldName"
+                      },
+                      {
+                        "label": "字段名",
+                        "field": "attributeName"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "expect": {
+        "permission": ""
+      }
+    },
+    {
+      "title": "删除",
+      "type": "request",
+      "options": {
+        "outside": true,
+        "tips": "确定要删除吗?",
+        "API": "/api/wf/processes/steps/(id)",
+        "method": "delete"
+      }
+    }
+  ],
+  "createFields": [
+    {}
+  ],
+  "updateFields": [
+    {}
+  ],
+  "viewFields": [
+    {}
+  ],
+  "listAPI": "/api/crud/pdfAttribute/pdfAttributes/doc?docId=[id]",
+  "createAPI": "/api/wf/processes/[id]/steps",
+  "getAPI": "/api/wf/processes/steps/(id)",
+  "updateAPI": "/api/wf/processes/steps/(id)",
+  "deleteAPI": "/api/wf/processes/steps/(id)",
+  "searchFields": [
+    {
+      "field": "search",
+      "label": "搜索",
+      "type": "input",
+      "props": {
+        "placeholder": "请输入..."
+      }
+    }
+  ],
+  "tableFields": [
+    {
+      "field": "fieldName",
+      "label": "标识"
+    },
+    {
+      "field": "attributeName",
+      "label": "字段名"
+    },
+    {
+      "field": "line",
+      "label": "行"
+    },
+    {
+      "field": "column",
+      "label": "列"
+    },
+    {
+      "field": "location",
+      "label": "修改方位",
+      "valueType": "tag",
+      "options": {
+        "map": {
+          "top": "上",
+          "bottom": "下",
+          "left": "左",
+          "right": "右"
+        }
+      }
+    }
+  ]
+}
